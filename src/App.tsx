@@ -1,3 +1,9 @@
+import { Home } from "./pages";
+
 export function App() {
-  return <div>Jobify</div>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 }
