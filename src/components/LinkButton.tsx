@@ -1,18 +1,20 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  to: string;
+};
 
-export function Button({ children }: ButtonProps) {
-  return <StyledButton>{children}</StyledButton>;
+export function LinkButton({ to, children }: ButtonProps) {
+  return <StyledLinkButton to={to}>{children}</StyledLinkButton>;
 }
 
-const StyledButton = styled.button`
+const StyledLinkButton = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0 0.5rem;
   font-size: 1rem;
-  border-radius: 999px;
   letter-spacing: var(--letterSpacing);
   transition: var(--transition);
   padding: 1rem 2rem;
@@ -20,10 +22,10 @@ const StyledButton = styled.button`
   color: var(--white);
   background: var(--primary-600);
   border: 1px solid var(--primary-600);
+  border-radius: 999px;
   box-shadow: var(--shadow-2);
-  letter-spacing: var(--letterSpacing);
-  transition: var(--transition);
-  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
   &:hover {
     background: var(--primary-700);
     box-shadow: var(--shadow-3);

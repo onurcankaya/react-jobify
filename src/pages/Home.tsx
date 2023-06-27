@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Logo, Button } from "../components";
+import { Logo, LinkButton } from "../components";
 
 import figures from "../assets/images/figures.svg";
 
@@ -12,13 +12,15 @@ export function Home() {
       </Navigation>
       <Body>
         <TextContent>
-          <Title>
-            Modern <span>job</span> tracking
-          </Title>
-          <Subtitle>
-            Find your next creative gig with <span>Jobify</span>
-          </Subtitle>
-          <Button>Login / Register</Button>
+          <Info>
+            <Title>
+              Modern <span>job</span> tracking
+            </Title>
+            <Subtitle>
+              Find your next creative gig with <span>Jobify</span>
+            </Subtitle>
+          </Info>
+          <LinkButton to="/dashboard">Login / Register</LinkButton>
         </TextContent>
         <Figures src={figures} alt="standing-human-figures" />
       </Body>
@@ -54,7 +56,12 @@ const TextContent = styled.div`
   }
 `;
 
+const Info = styled.div`
+  margin-bottom: 3rem;
+`;
+
 const Title = styled.h1``;
+
 const Subtitle = styled.p`
   font-size: 1.2rem;
 `;
