@@ -1,14 +1,17 @@
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 import error from "../assets/images/lost.svg";
-import { LinkButton } from "../components";
+import { Button } from "../components";
 
 export const Error = (): JSX.Element => {
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <Image src={error} alt="error-image" />
       <Subtitle>Page Not Found</Subtitle>
-      <LinkButton to="/">Go back</LinkButton>
+      <Button onClick={() => navigate("/")}>Go back</Button>
     </Wrapper>
   );
 };

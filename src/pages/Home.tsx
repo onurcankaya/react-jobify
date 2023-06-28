@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
-import { Logo, LinkButton } from "../components";
+import { Logo, Button } from "../components";
 
 import figures from "../assets/images/figures.svg";
 
 export function Home() {
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <Navigation>
@@ -20,7 +23,7 @@ export function Home() {
               Find your next creative gig with <span>Jobify</span>
             </Subtitle>
           </Info>
-          <LinkButton to="/dashboard">Login / Register</LinkButton>
+          <Button onClick={() => navigate("/login")}>Login / Register</Button>
         </TextContent>
         <Figures src={figures} alt="standing-human-figures" />
       </Body>
